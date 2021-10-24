@@ -44,10 +44,16 @@ namespace KvadratnaJedndzba
             get { return b * b - 4 * a * c; }
         }
 
-        public double[] Roots
+        public Complex.Complex[] Roots
         {
-            get { double sqrtDisc = Math.Sqrt(Discriminant);
-                return new double[] { (-b - sqrtDisc) / 2 / a, (-b + sqrtDisc) / 2 / a };
+            get
+            {
+                Complex.Complex[] sqrtDisc = Complex.Complex.Sqrt(this.Discriminant);
+                Complex.Complex realPart = (new Complex.Complex(-this.b, 0)) / (new Complex.Complex(2 * this.a, 0));
+                sqrtDisc[0] /= (new Complex.Complex(2 * this.a, 0));
+                sqrtDisc[1] = sqrtDisc[1] / (new Complex.Complex(2 * this.a, 0));
+
+                return new[] { realPart + sqrtDisc[0], realPart + sqrtDisc[1] };
             }
         }
 
