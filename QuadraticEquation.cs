@@ -4,7 +4,7 @@ using System.Text;
 
 namespace KvadratnaJedndzba
 {
-    class QuadraticEquation
+    public class QuadraticEquation
     {
         public QuadraticEquation()
         {

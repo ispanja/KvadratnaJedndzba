@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Complex
 {
-    struct Complex
+    public struct Complex
     {
         public Complex(double real, double imaginary)
         {
